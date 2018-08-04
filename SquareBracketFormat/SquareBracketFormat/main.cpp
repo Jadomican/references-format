@@ -37,6 +37,7 @@
 #include <string>
 #include <fstream>
 #include <boost/algorithm/string.hpp> // include Boost, a C++ library
+#include <windows.h>
 using namespace std;
 
 int main()
@@ -102,8 +103,9 @@ int main()
 	out << full_file;
 	out.close();
 
+	ShellExecute(NULL, "open", "referenced.txt", NULL, NULL, SW_SHOWDEFAULT);
+
 	cout << full_file;
 
-	system("pause");
 	return 0;
 }
